@@ -23,3 +23,5 @@
 # nomes constantes tem TODAS as letras maiúsculas
 
 #system.out.printIn("O numero" + i + "eh par");
+
+#usar @Overide / @Override
