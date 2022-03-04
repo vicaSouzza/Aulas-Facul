@@ -61,6 +61,29 @@
     return true;
   }
   
+  constructor:
+  public ContaBancaria(String umNome, string umTipo){
+    this.nome = umNome;
+    this.valor = 0;
+    this.valor = umTipo;
+  }
+  
+  public ContaBancaria(String umNome){
+    this(umNome, "normal");
+  }
+  
+  ficaAdica: Reutilizar código para ser mais fácil a atualização
+  
+  toString
+  @Override
+  public String toString(){
+    String res="";
+    res+= "Classe ContaBancaria\n";
+    res+= "Nome: " + this.nome+"\n";
+    res+= "Valor: " + this.valor+"\n";
+    res+= "Tipo: " + this.tipo+"\n";
+    return res;
+  }
 
   
 
