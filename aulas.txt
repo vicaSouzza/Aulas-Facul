@@ -84,6 +84,8 @@
     res+= "Tipo: " + this.tipo+"\n";
     return res;
   }
+  
+  ficaAdica 2: no Eclipse tem como criar os constructors e métodos get e set automático
 
   
 
