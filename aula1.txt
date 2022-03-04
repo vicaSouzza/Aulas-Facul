@@ -1,0 +1,67 @@
+-- 25/03/2022 --------------------
+  paradigma orientação orientada a objetos
+  sintaxe (linguagem java)
+  convenções
+ 
+  composição: do que um objeto é feito
+  herança: quais são as superclasses e subclasses 
+  encapsulamento: não precisar que outras classes saibam o funcionamento de uma função
+  polimorfismo: basicamente no meio do programa poder escolher qual comando usar
+
+  tipos permitidos int, double, bool, char
+  estrutura de dados: arrays, list, map, sintaxe
+
+   class gato{
+     string nome
+     string raça
+     string idade
+   }
+
+  camelcase em java
+  CadastroGato -> classe    cadastroGato -> variável
+  NomeDeClasse
+
+  nomes constantes tem TODAS as letras maiúsculas
+
+  system.out.printIn("O numero" + i + "eh par");
+
+  usar @Overide / @Override
+----------------------------------
+.
+.
+.
+-- 04/03/2022 --------------------
+  em Java os atributos são private -> apenas a mesma classe consegue acessar e modificar o valor desse atributo
+  exemplo: private String nome;
+  
+  private, public, protect -> modificadores de acesso
+  o método precisa ser public para que outra classe acesse esse atributo ou possa fazer modificações
+  
+  para ler se usa o método get
+  exemplo: public void getNome(){
+    return this.nome;
+  }
+  
+  para alterar se usa o método set
+  exemplo: public void setNome(String umNome){
+    this.nome = umNome;
+  }
+ 
+  outros exemplos:
+  public void deposita( double valorDeposito){
+    this.valor = this.valor + valorDeposito;
+  }
+  
+  public boolean retira( double valorRetirada){
+    if(valorRetirada > this.valor){
+        system.out("Não foi possível");
+        return false;
+    }
+    this.valor-=valorRetirada;
+    return true;
+  }
+  
+
+  
+
+
