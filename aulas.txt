@@ -86,6 +86,8 @@
   }
   
   ficaAdica 2: no Eclipse tem como criar os constructors e métodos get e set automático
+  
+  Lab01.02 ex01 -> VAI CAIR NA PROVAA
 
   
 
