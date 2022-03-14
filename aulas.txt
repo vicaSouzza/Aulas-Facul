@@ -88,7 +88,20 @@
   ficaAdica 2: no Eclipse tem como criar os constructors e métodos get e set automático
   
   Lab01.02 ex01 -> VAI CAIR NA PROVAA
+  
+-- 09/03/2022 --------------------
 
+CREATE DATABASE teste;
+
+CREATE TABLE casa(
+  moradores int;
+  numero int primary key;
+  telefone varchar(10)
+);
+
+INSERT casa VALUES(3, 260, "1938090426");
+
+DROP DATABASE teste;
   
 
 
