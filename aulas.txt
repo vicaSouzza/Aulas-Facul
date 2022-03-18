@@ -103,5 +103,17 @@ INSERT casa VALUES(3, 260, "1938090426");
 
 DROP DATABASE teste;
   
+-- 18/03/2022 --------------------
+
+array em java
+
+ArrayList <Gato> gatos;
+gatos= new ArrayList <Gato> ();
+gatos.add (new gatp)("xica");
+Gato gato01= new Gato ("miau");
+gatos.add (gato01);
+gatos.add (gato01);
+sout(gatos.get (0));
+sout (gatos.get(1));
 
 
