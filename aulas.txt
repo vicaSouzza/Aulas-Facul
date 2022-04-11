@@ -146,3 +146,5 @@ Chave estrangeira só é utiliza quando for 1,n ou n,n
 Chave estrangeira nunca será chave primária
 
 Quando temos um relacionamento n:n cria-se uma tabela intermediária
+
+
