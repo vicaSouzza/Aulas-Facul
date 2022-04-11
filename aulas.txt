@@ -124,6 +124,25 @@ Prova de LPOO
 -> Classes e objetos
 -> Arrays
 
--- 00/00/2022 --------------------
+-- 11/04/2022 --------------------
 
+Chave estrangeira e chave primária 
 
+Campo Matrícula (nome do atributo)
+
+[Matrícula]|
+  Registro |
+
+Estabelecer associações ou identificar um registro de maneira única dentro da tabela -> chave primária
+
+Chave estrangeira -> relacionamentos, pego um campo de uma tabela e insiro em outra
+
+Alternate Key (chave alternativa) -> não são chaves primárias, não tem importância na configuração
+
+Composite Key (chave composta) -> junção de dois atributos para criar uma chave
+
+Chave estrangeira só é utiliza quando for 1,n ou n,n
+
+Chave estrangeira nunca será chave primária
+
+Quando temos um relacionamento n:n cria-se uma tabela intermediária
