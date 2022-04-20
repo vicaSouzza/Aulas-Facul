@@ -147,4 +147,8 @@ Chave estrangeira nunca será chave primária
 
 Quando temos um relacionamento n:n cria-se uma tabela intermediária
 
+-- 20/04/2022 --------------------
 
+UPDATE sorvete SET Cobertura = "Simples" WHERE Cobertura = "Cobertura Simples" 
+
+slides do Teams Laboratorio 03 -> UPDATE, SET, SELECT, WHERE
