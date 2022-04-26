@@ -152,3 +152,68 @@ Quando temos um relacionamento n:n cria-se uma tabela intermediária
 UPDATE sorvete SET Cobertura = "Simples" WHERE Cobertura = "Cobertura Simples" 
 
 slides do Teams Laboratorio 03 -> UPDATE, SET, SELECT, WHERE, DELETE
+
+-- 26/04/2022 --------------------
+
+Soma de matrizes
+
+3 1 2  + 1 2 3 = 4 3 5
+2 2 3    3 2 1   5 4 4
+
+
+Produto por escalar
+
+3 × 3 1 2 = 9 3 6 
+    2 2 3   6 6 9
+
+
+3 1 2     1 2   
+2 2 3  ×  3 -1  = R1,1  R1,2
+          0 1     R2,1  R2,2
+
+
+R1,1 = 3 2 1  ×  1
+                 3
+                 0
+
+R1,1 = 3×1 + 1×3 + 2×0
+R1,1 = 6
+
+
+* multiplicação de matrizes não é comutativa 
+
+A2×2 B2×2 = C2×2 
+                    -->  Não necessariamente são iguais
+B2×2 A2×2 = C`2×2
+
+
+ - Multiplicação de Matrizes -
+
+Primeira linha vezes a segunda coluna
+Segunda linha vezes a primeira coluna
+
+A = 2 5 × B = 3 2    =>  AB = 6+5 4  => 11 4
+    3 4       1 0             9+4 6     13 6
+ 
+° Transposta
+
+Denotam por At a transposta da matriz A
+
+1 2 3 T   = 1 4
+4 5 6       2 5
+            3 6
+
+Teorema: Sejam A e B matrizes e K um escalar. Então, sempre que os produtos e somas
+estiverem definidos, valem:
+
+(i) (A + B)t = At + BT
+(ii) (At)t = A
+(iii) (kA)t = kit
+(iv) (AB)t = Bt At
+
+
+- Matriz [identidade] e [inversa] -
+
+X×1 = X   => 1 é identidade
+X×X^-1 = 1   => X^-1 é inverso e 1 é identidade
+
