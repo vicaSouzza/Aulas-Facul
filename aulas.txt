@@ -241,3 +241,21 @@ CX1 + DY1    CX2 + DY2   0 1
 
 Ax1+by1=1 => ax1=1-by1 => x1 = 1-by1/a
 
+Y1 = -C/|A|
+X1 = D/|A|
+X2 = -B/|A|
+Y2 = A/|A|
+
+A B -1(inversa) = X1 X2
+C D               Y1 Y2
+
+ - Algoritmo P/ inverter matriz 2x2 - 
+
+Se a matriz for invertível, 
+
+1° trocar de posição os elementos da diagonal principal
+2° inverter o sinal dos demais elementos
+3° dividir tudo pela determinante
+
+Uma matriz possui inversa se seu determinante não for nulo
+
