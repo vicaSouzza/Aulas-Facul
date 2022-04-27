@@ -179,6 +179,7 @@ R1,1 = 3 2 1  ×  1
 R1,1 = 3×1 + 1×3 + 2×0
 R1,1 = 6
 
+A×I => IA = A
 
 * multiplicação de matrizes não é comutativa 
 
@@ -216,4 +217,27 @@ estiverem definidos, valem:
 
 X×1 = X   => 1 é identidade
 X×X^-1 = 1   => X^-1 é inverso e 1 é identidade
+
+
+A×I => IA => A
+
+I3x3 = 1 0 0
+       0 1 0
+       0 0 1
+
+A×A^-1 = I
+
+a b   x1 x2  = 1 0
+c d   y1 y2    0 1
+
+AX1 + BY1    AX2 + BY2 = 1 0
+CX1 + DY1    CX2 + DY2   0 1
+
+{ ax1+by1 = 1
+  cx1+dy1 = 0
+
+{ ax2+by2 = 0
+  cx2+dy2 = 1
+
+Ax1+by1=1 => ax1=1-by1 => x1 = 1-by1/a
 
