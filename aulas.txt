@@ -259,3 +259,23 @@ Se a matriz for invertível,
 
 Uma matriz possui inversa se seu determinante não for nulo
 
+-- 29/04/2022 --------------------
+
+Classe abstrata
+
+Public abstract class Animal
+
+Classe abstrata serve de modelo, não tem coisas funcionais apenas inicializa os atributos e métodos
+
+Não existe Animal a = new Animal() X
+
+
+
+Classe interface
+
+Interface voavel {
+
+    public void voa()
+}
+
+Implements caso queira utilizar o método voa em outra classe
