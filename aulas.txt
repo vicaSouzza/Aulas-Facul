@@ -299,3 +299,5 @@ RuntimeException
 
 IOException 
 - precisa tratar
+
+Try with resource
