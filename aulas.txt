@@ -279,3 +279,20 @@ Interface voavel {
 }
 
 Implements caso queira utilizar o método voa em outra classe
+
+
+Try catch  
+
+Try é se der certo
+Catch é se der erro
+
+printStackTrace -> normalmente utilizado
+
+Em java tem as exceptions que somos obrigados a dar um tratamento
+
+Trowable
+
+RuntimeException
+Nullpointer 
+StackOverflow
+Arithmetic
