@@ -293,6 +293,9 @@ Em java tem as exceptions que somos obrigados a dar um tratamento
 Trowable
 
 RuntimeException
-Nullpointer 
-StackOverflow
-Arithmetic
+-Nullpointer 
+-StackOverflow
+-Arithmetic
+
+IOException 
+- precisa tratar
