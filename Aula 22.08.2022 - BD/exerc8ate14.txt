@@ -1,0 +1,33 @@
+# ------------------- Exerc 8
+
+use techstore;
+
+DELETE FROM Categoria WHERE nome="Tablet";
+
+# ------------------- Exerc 9
+
+Resposta: Porque a tabela Categoria tem referência com outras tabelas
+
+# ------------------- Exerc 10
+
+SELECT * FROM produtos where produtos.Id_Categoria = "4";  
+
+10 consoles;
+
+# ------------------- Exerc 11
+
+DELETE FROM produtos WHERE produtos.Id_Categoria=4 and  produtos.Preco <  1000.00 or produtos.Preco > 4000.00; 
+
+# ------------------- Exerc 12
+
+DELETE FROM produtos where modelo LIKE 'T%';
+
+# ------------------- Exerc 14
+
+DROP  nome_database;
+
+DELETE FROM nome_campo WHERE condicao;
+
+TRUNCATE TABLE nome_tabela;
+
+
