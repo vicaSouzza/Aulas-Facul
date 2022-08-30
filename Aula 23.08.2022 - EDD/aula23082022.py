@@ -41,7 +41,7 @@ print(minhaListaencadeada.Head.next.next.data, end=" ")
 print(minhaListaencadeada.Head.next.next.next.data)
 
 
-##################################################
+####   Remove no Final   ##############################################
 class Node:
     Def _init_(self, data):
         self.data = data
@@ -53,9 +53,35 @@ class LinkedList:
 
 meuNo = Node(10)
 
-print("O dado armazenado no No é:", meuNo.data)
-print("O apontador next é: ", meuNo.next)
+atual = self.InicioDaLista
 
 Def removeDoFim (self):
-    if meuNo.next == None:
-        meuNo.data.remove
+    if atual.next == None:
+        proximo = atual.next
+        del proximo
+    else:
+        print("Lista é vazia")
+
+####   Remove no Começo  ##############################################
+
+class Node:
+    Def _init_(self, data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    Def _init_(self):
+        InicioDaLista = None
+
+meuNo = Node(10)
+
+atual = self.InicioDaLista
+
+self.InicioDaLista = atual.next
+
+del atual
+
+
+####   Remove no Meio  ##############################################
+
+
