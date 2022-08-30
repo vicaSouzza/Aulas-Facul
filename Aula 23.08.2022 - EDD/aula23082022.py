@@ -39,3 +39,23 @@ print(minhaListaencadeada.Head.data, end=" ")
 print(minhaListaencadeada.Head.next.data, end=" ")
 print(minhaListaencadeada.Head.next.next.data, end=" ")
 print(minhaListaencadeada.Head.next.next.next.data)
+
+
+##################################################
+class Node:
+    Def _init_(self, data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    Def _init_(self):
+        InicioDaLista = None
+
+meuNo = Node(10)
+
+print("O dado armazenado no No é:", meuNo.data)
+print("O apontador next é: ", meuNo.next)
+
+Def removeDoFim (self):
+    if meuNo.next == None:
+        meuNo.data.remove
