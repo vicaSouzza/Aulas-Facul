@@ -120,7 +120,7 @@ class LinkedList:
         
     def printLista(self):
         atual = self.InicioDaLista;
-        while atual.next is not None:
+        while atual is not None:
             print(atual.data)
             atual = atual.next
     
@@ -155,5 +155,5 @@ meuNo4.next = None
 
 Lista.printLista()
 print("\n------")
-Lista.removeDoPonto(2)
+Lista.removeDoPonto(2) #escolhe um index para remover
 Lista.printLista()
