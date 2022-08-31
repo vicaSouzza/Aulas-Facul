@@ -43,24 +43,49 @@ print(minhaListaencadeada.Head.next.next.next.data)
 
 ####   Remove no Final   ##############################################
 class Node:
-    Def _init_(self, data):
+    def __init__(self, data):
         self.data = data
         self.next = None
 
 class LinkedList:
-    Def _init_(self):
+    def __init__(self):
         InicioDaLista = None
+        
+    def printLista(self):
+        atual = self.InicioDaLista;
+        while atual.next is not None:
+            print(atual.data)
+            atual = atual.next
+    
+    def removeDoFim (self):
+        if self.InicioDaLista is not None:
+            atual = self.InicioDaLista
+            proximo = atual.next
+            
+            while proximo.next is not None:
+                atual = atual.next
+                proximo = atual.next
+            
+            atual.next = None
+            del proximo
 
 meuNo = Node(10)
+meuNo1 = Node(11)
+meuNo2 = Node(12)
+meuNo3 = Node(13)
+Lista = LinkedList()
+Lista.InicioDaLista = meuNo
 
-atual = self.InicioDaLista
+meuNo.next = meuNo1
+meuNo1.next = meuNo2
+meuNo2.next = meuNo3
 
-Def removeDoFim (self):
-    if atual.next == None:
-        proximo = atual.next
-        del proximo
-    else:
-        print("Lista é vazia")
+Lista.printLista()
+
+Lista.removeDoFim()
+
+print("\n\n")
+Lista.printLista()
 
 ####   Remove no Começo  ##############################################
 
@@ -84,4 +109,51 @@ del atual
 
 ####   Remove no Meio  ##############################################
 
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
 
+class LinkedList:
+    def __init__(self):
+        InicioDaLista = None
+        
+    def printLista(self):
+        atual = self.InicioDaLista;
+        while atual.next is not None:
+            print(atual.data)
+            atual = atual.next
+    
+    def removeDoPonto (self, index):
+        if self.InicioDaLista is not None:
+            antecessor = self.InicioDaLista
+            proximo = antecessor.next
+            
+            for i in range(1,index):
+                if proximo:
+                    antecessor = proximo
+                    proximo = proximo.next
+            
+            antecessor.next = proximo.next
+            del proximo
+        
+
+meuNo = Node(10)
+meuNo1 = Node(11)
+meuNo2 = Node(12)
+meuNo3 = Node(13)
+meuNo4 = Node(14)
+meuNo5 = None
+Lista = LinkedList()
+Lista.InicioDaLista = meuNo
+
+meuNo.next = meuNo1
+meuNo1.next = meuNo2
+meuNo2.next = meuNo3
+meuNo3.next = meuNo4
+meuNo4.next = None
+
+Lista.printLista()
+print("\n------")
+Lista.removeDoPonto(2)
+Lista.printLista()
