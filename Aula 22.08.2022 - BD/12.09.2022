@@ -1,0 +1,15 @@
+-------------------------- Exercicíos da Lista ------------------------------------
+
+1.) SELECT Clientes.Nome,Clientes.Telefone, Planos.Preco FROM Clientes INNER JOIN Planos ON Clientes.PlanosId = Planos.Id;
+
+2.) SELECT Clientes.Nome, Financeiro.Status, Financeiro.Mes FROM Financeiro INNER JOIN Clientes ON Financeiro.ClientesCodigo = Clientes.Codigo WHERE Mes='Fev';
+
+3.) SELECT Clientes.Nome, Clientes.Telefone , Financeiro.Status FROM Financeiro INNER JOIN Clientes ON Financeiro.ClientesCodigo = Clientes.Codigo WHERE Status = 'Aberto';
+
+4.) ALTER VIEW Vw_ClienteStatus AS SELECT Clientes.Nome, Financeiro.Status, Planos.Combo FROM Clientes INNER JOIN Financeiro ON Financeiro.ClientesCodigo = Clientes.Codigo
+INNER JOIN Planos ON Clientes.PlanosId = Planos.Id;
+
+5.) SELECT * from Vw_ClienteStatus WHERE Vw_ClienteStatus.Nome = 'Joan Garrett';
+
+6.) CREATE VIEW vw_comboClientes AS SELECT Clientes.Nome, Planos.Canais, Planos.Preco FROM Planos INNER JOIN Clientes ON Clientes.PlanosId = Planos.Id ORDER BY Clientes.Nome ASC;
+
