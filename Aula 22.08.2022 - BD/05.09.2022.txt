@@ -1,9 +1,0 @@
---------- VIEW SQL ------------
-
-1.A) ALTER VIEW Vw_MarcaNome AS SELECT Fabricante.Marca, Veiculo.Nome FROM Fabricante INNER JOIN VEICULO ON Fabricante.Codigo = Veiculo.FabricanteCod;
-
-B) SELECT * FROM vw_MarcaNome;
-
-C) SELECT * FROM vw_MarcaNome WHERE vw_MarcaNome.Marca = "Audi";
-
-D) 

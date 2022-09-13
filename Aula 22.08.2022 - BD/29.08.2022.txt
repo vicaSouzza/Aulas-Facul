@@ -1,3 +1,0 @@
-5.A) SELECT Moto.Nome, Marca.Nome FROM Moto, Marca ORDER BY Moto.nome ASC;
-
-B) SELECT Marca.Nome, Moto.MarcaCodigo FROM Marca LEFT JOIN Moto ON Moto.MarcaCodigo = Marca.Codigo;
