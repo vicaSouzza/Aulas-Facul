@@ -1,0 +1,31 @@
+-------------------------- Exercicíos da Lista ------------------------------------
+
+1.) SELECT Clientes.Nome,Clientes.Telefone, Planos.Preco FROM Clientes INNER JOIN Planos ON Clientes.PlanosId = Planos.Id;
+
+2.) SELECT Clientes.Nome, Financeiro.Status, Financeiro.Mes FROM Financeiro INNER JOIN Clientes ON Financeiro.ClientesCodigo = Clientes.Codigo WHERE Mes='Fev';
+
+3.) SELECT Clientes.Nome, Clientes.Telefone , Financeiro.Status FROM Financeiro INNER JOIN Clientes ON Financeiro.ClientesCodigo = Clientes.Codigo WHERE Status = 'Aberto';
+
+4.) ALTER VIEW Vw_ClienteStatus AS SELECT Clientes.Nome, Financeiro.Status, Planos.Combo FROM Clientes INNER JOIN Financeiro ON Financeiro.ClientesCodigo = Clientes.Codigo
+INNER JOIN Planos ON Clientes.PlanosId = Planos.Id;
+
+5.) SELECT * from Vw_ClienteStatus WHERE Vw_ClienteStatus.Nome = 'Joan Garrett';
+
+6.) CREATE VIEW vw_comboClientes AS SELECT Clientes.Nome, Planos.Canais, Planos.Preco FROM Planos INNER JOIN Clientes ON Clientes.PlanosId = Planos.Id ORDER BY Clientes.Nome ASC;
+
+7.) SELECT * FROM vw_comboClientes WHERE vw_comboClientes.Preco >= 100.00
+
+8.) UPDATE Planos SET Preco = Preco * 1.10 WHERE Combo != 'Basico';
+
+9.)
+UPDATE Planos SET Combo = 'Max' WHERE Combo = 'Hiper';
+UPDATE Planos SET Canais ='Tv aberta + 3 desenhos + 4 esportes + 2 noticias + 3 documentarios' WHERE Canais ='Tv aberta + 3 desenhos + 4 esportes + 2 noticias + 2 documentarios' AND Combo = 'Max'; 
+UPDATE Planos SET Preco = 115.00 WHERE Canais = 100.00 AND Combo = 'Max'; 
+
+10.) SELECT Clientes.Nome, Financeiro.Status FROM Clientes INNER JOIN Ex_Clientes ON Ex_Clientes.ClientesCodigo = Clientes.Codigo INNER JOIN Financeiro ON Financeiro.ClientesCodigo = Clientes.Codigo WHERE Status = 'Aberto';
+
+11.)
+
+12.)
+
+13.) 
