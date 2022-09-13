@@ -1,0 +1,46 @@
+Para adicionar uma coluna:
+ALTER TABLE <Nome_da_Tabela> ADD <Nome_do_Campo> <Tipo_do_Campo> (Tamanho);
+
+Para excluir uma coluna:
+ALTER TABLE <Nome_da_Tabela> DROP COLUMN  <Nome_do_Campo>;
+
+Para modificar a estrutura de uma coluna:
+ALTER TABLE <Nome_da_Tabela> MODIFY <Nome_do_Campo> <Novo_tipo> (Tamanho_do_Novo_tipo);
+
+Para renomear uma tabela:
+ALTER TABLE <nome_tabela> RENAME <novo_nome_tabela>; 
+
+Para se renomear uma coluna:
+ALTER TABLE <nome_tabela> CHANGE <nome_da_coluna> <novo_nome_coluna> <tipo> (Tamanho);
+
+Order By em ordem crescente:
+SELECT <Nome_da_Coluna> FROM <Tabela> ORDER BY <Nome_da_Coluna> ASC;
+
+Order By em ordem decrescente:
+SELECT <Nome_da_Coluna> FROM <Tabela> ORDER BY <Nome_da_Coluna> DESC;
+
+sintaxe do update, comando para atualizar um registro:
+UPDATE <Nome_da_Tabela> SET <Coluna> <operador> <Novo_Valor> WHERE <Condição>;
+
+Exclui registro de uma tabela:
+DELETE FROM <Nome_da_Tabela> WHERE <Condição>;
+
+Exclui registros mesmo estando vinculados a chave primária:
+FOREIGN KEY (Nome_Campo) REFERENCES Nome_tabela (Nome_Campo) ON DELETE CASCADE;
+
+Mesclar registros com INNER JOIN, :
+SELECT Tabela1.Coluna1 FROM Tabela1 INNER JOIN Tabela2 ON Tabela1.ChaveEstrangeira = Tabela2.ChavePrimaria; 
+
+LEFT JOIN, retorna a tabela inteira e apenas os registros que coincidem com o join da segunda tabela:
+SELECT Categoria.*, Produtos.* FROM Categoria LEFT JOIN Produto ON Categoria.Numero = Produto.CatNum_FK;
+
+RIGHT JOIN, retorna a segunda tabela inteira e apenas os registros que coincidem com o join da primeira tabela (contrário do left join):
+SELECT Categoria.*, Produto.* FROM Categoria RIGHT JOIN Produto ON Categoria.Numero = Produto.CatNum_FK; 
+
+Cria uma view, view é como uma "formatação" salva de uma tabela:
+CREATE VIEW nome_da_view AS SELECT coluna_a, coluna_b FROM tabela WHERE condicoes;
+
+ALTER VIEW nome_da_view AS SELECT coluna_a, coluna_b FROM tabela WHERE condicoes;
+
+drop:
+usado para excluir uma tabela ou database, drop table / drop database
