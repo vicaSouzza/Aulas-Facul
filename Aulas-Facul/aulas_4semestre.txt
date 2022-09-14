@@ -1,1 +1,9 @@
+Implements -> interface
 
+Extends -> classe 
+
+Controller -> onde tem mais ações
+
+View -> exibe dados ao usuário
+
+Model -> link com dados/ database
