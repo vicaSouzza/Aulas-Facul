@@ -26,6 +26,61 @@ Model -> link com dados/ database
 - Passos para montar as listas: dividir em 2 etc
 
 
+/* Para mostrar o endereço de uma variável usamos o %p
+* para formatar, e para obter o valor usamos o &
+*/
+printf("\n O endereço de memória da variável num é : %p", &num);
+return 0;
+}
+
+
+  ~~~ Criando um construtor em Python ~~~~
+
+class registro:
+	def __init__(self,nome,estado,idade,sexo):
+		self.nome = nome;
+		self.estado = estado;
+		self.idade = idade;
+		self.sexo = sexo;
+Pessoa = registro(‘Pedro’,’SP’,35,’M’);
+
+  ~~~ Ponteiros em Python ~~~~
+  
+  ~~~ Pilha ~~~~
+  
+  - Primeiro que entra é o último a sair / último que entra é o primeiro a sair
+  - append é no começo 
+  - adiciona registros novos no começo, então os registros mais antigos ficam no final (na base da pilha)
+  
+  ~~~ Fila ~~~~
+  
+  - Primeiro que entra é o primeiro a sair
+  - append é no final
+  - adiciona novos registros no final, então os registros mais antigos ficam no começo 
+  
+  
+  ~~~ Árvore ~~~~
+  
+  - estrutura tridimencional organizada de uma forma que não precisariam serem feitas muitas condições para se achar o valor buscado.
+  
+  () - ( ) - ()
+        I
+       ( )
+   
+   
+  ~~~ Lista Encadeada ~~~~
+  
+  - Utiliza ponteiros para se ver o próximo registro e com base nisso excluir ou adicionar um registro
+  
+  
+  ~~~ Esquema de gráficos ~~~~
+
+[]] -> []] -> []] -> null
+
+- Rever como inserir no meio, começo e fim
+- Rever como excluir do meio, começo e fim
+
+
 ---------------------------------------------- Banco de Dados -------------------------------------
 
 *Prova de BD*
