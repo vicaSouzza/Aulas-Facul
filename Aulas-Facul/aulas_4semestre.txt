@@ -1,3 +1,5 @@
+---------------------------------------------- Java ----------------------------------------------
+
 Implements -> interface
 
 Extends -> classe 
@@ -7,3 +9,28 @@ Controller -> onde tem mais ações
 View -> exibe dados ao usuário
 
 Model -> link com dados/ database
+
+*Prova de Java*
+- Indentificar as saídas do programa
+- Identificar classes e métodos que faltam no código
+- Identificar o que está errado no código
+- Telas em Java: saber os nomes dos componentes
+
+
+---------------------------------------------- Estrutura de Dados ---------------------------------
+
+*Prova de ED*
+- Estrutura pilha, fila, árvore e lista encadeada
+- Ponteiros
+- Passos para montar as listas: dividir em 2 etc
+
+
+---------------------------------------------- Banco de Dados -------------------------------------
+
+*Prova de BD*
+- Inner Join, Left Join, Right Join
+- Delete e drop
+- Update
+- Views
+- Função Alter -> Alter view e alter table
+- ON DELETE CASCATE
