@@ -1,0 +1,58 @@
+1) A. Questão certa
+   B. Para criar uma VIEW não se utiliza o comando BEGIN e END
+      create view v1 begin select emp.name, emp.salario from emp end
+   C. Falta o comando CREATE VIEW no começo e no final deveria ter "to view"
+   D. create view v1 *(varchar(40), double) begin* select emp.name as a, emp.salario as b from emp *return* a, b *end*;
+      partes grifadas estão erradas, no comando CREATE VIEW não é utilizado begin, end, return e parte (varchar(40), double) não é utilizada nesse comando e sim quando vamos criar ou alterar uma tabela
+      
+2) A. O segundo comando não irá excluir o banco de dados e o terceiro irá excluir todos os registros da tabela
+   B. O terceiro comando irá excluir os registros da tabela
+   C. O primeiro comando vai excluir um registro, o segundo não vai excluir o banco de dados, o terceiro comando 
+   D.
+   E. Questão certa
+
+3) A.
+   B. Questão certa
+   C.
+   D.
+   E.
+   
+4) A.
+   B.
+   C. Questão certa
+   D.
+   E.
+
+5) A.
+   B.
+   C. Questão certa
+   D.
+   E.
+
+6) A.
+   B.
+   C.
+   D. Questão certa
+   E.
+
+7) A. Questão certa
+   B. Para criar uma tabela utilizamos o comando CREATE TABLE invés de NEW TABLE e o comando DELETE apaga apenas um registro da tabela.
+   C e D: Estão erradas pois schema não é referente à tabela
+   
+8) A.
+   B.
+   C. Questão certa
+   D.
+   E.
+   
+9) A.
+   B.
+   C.
+   D. Questão certa
+   E.
+   
+10) A. Questão certa
+    B.
+    C.
+    D.
+    E.
