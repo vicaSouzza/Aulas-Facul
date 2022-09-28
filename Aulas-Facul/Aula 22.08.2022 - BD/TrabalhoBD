@@ -1,57 +1,70 @@
-1) A. Questão certa
-   B. Para criar uma VIEW não se utiliza o comando BEGIN e END
-      create view v1 begin select emp.name, emp.salario from emp end
-   C. Falta o comando CREATE VIEW no começo e no final deveria ter "to view"
+1) A. Questão certa.
+   B. Para criar uma VIEW não se utiliza o comando BEGIN e END, sintaxe correta:
+      create view v1 begin select emp.name, emp.salario from emp end;
+   C. Falta o comando CREATE VIEW no começo e no final deveria ter "to view".
    D. create view v1 *(varchar(40), double) begin* select emp.name as a, emp.salario as b from emp *return* a, b *end*;
-      partes grifadas estão erradas, no comando CREATE VIEW não é utilizado begin, end, return e parte (varchar(40), double) não é utilizada nesse comando e sim quando vamos criar ou alterar uma tabela
+      partes grifadas estão erradas, no comando CREATE VIEW não é utilizado begin, end, return e parte (varchar(40), double) não é utilizada nesse comando e sim 
+      quando vamos criar ou alterar uma tabela.
       
-2) A. O segundo comando não irá excluir o banco de dados e o terceiro irá excluir todos os registros da tabela
-   B. O terceiro comando irá excluir os registros da tabela
-   C. O primeiro comando vai excluir um registro, o segundo não vai excluir o banco de dados, o terceiro comando 
-   D. O primeiro comando vai excluir apenas o registro que tem como chave primária o valor 1, o segundo comando irá excluir a tabela, o terceiro comando irá excluir todos os registros de uma tabela e não o banco de dados
-   E. Questão certa
+2) A. O segundo comando não irá excluir o banco de dados e o terceiro irá excluir todos os registros da tabela.
+   B. O terceiro comando irá excluir os registros da tabela.
+   C. O primeiro comando vai excluir um registro, o segundo não vai excluir o banco de dados, o terceiro comando.
+   D. O primeiro comando vai excluir apenas o registro que tem como chave primária o valor 1, o segundo comando irá excluir a tabela, o terceiro comando irá excluir 
+   todos os registros de uma tabela e não o banco de dados.
+   E. Questão certa.
 
-3) I. Afirmativa correta
-   II. Afirmativa correta
-   III. Não aumenta a performance do banco de dados pois o que aumenta a performance deste seria a distribuição dos dados dentro das tabelas
-   IV. A utilização de VIEWS garante a integridade do banco de dados, mas é preciso outros comandos pois ela por si só não é o suficiente para manter toda a integridade
-   B. Questão certa
+3) I. Afirmativa correta.
+   II. Afirmativa correta.
+   III. Não aumenta a performance do banco de dados pois o que aumenta a performance deste seria a distribuição dos dados dentro das tabelas.
+   IV. A utilização de VIEWS garante a integridade do banco de dados, mas é preciso outros comandos pois ela por si só não é o suficiente para manter toda a 
+   integridade.
+   B. Questão certa.
    
-4) A. 
-   B.
-   C. Questão certa
-   D.
-   E. 
+4) A. Alternativa está errada pois está escrito SELECT FROM e a sintaxe correta do comando SELECT é: SELECT camposDaTabela FROM nomeTabela;
+   B. Falta () entre o INNER JOIN e o segundo ON para fazer o subselect.
+   C. Questão certa.
+   D. Falta () entre o INNER JOIN e o segundo ON para fazer o subselect e invés de estar escrito "cliente.codigo = itens.codped" deveria estar escrito 
+   "pedido.codigo = itens.codped", pois client.codigo não é o campo que está vinculado com a chave estrangeira itens.codped.
+   E. o comando apresenta erro em "cliente.codigo = itens.codped", pois deveria estar escrito "pedido.codigo = itens.codped", uma vez que client.codigo não é o campo
+   vinculado à chave estrangeira itens.codped.
 
-5) A.
-   B.
+5) A. É necessário uma relação com algum JOIN (INNER JOIN, LEFT JOIN, RIGHT JOIN), comando AND está sendo utilizado fora de contexto.
+   B. palavra JOIN por si só não é um comando.
    C. 
-   D.
-   E. Questão certa
+   D. 
+   E. Questão certa.
 
-6) I. Afirmativa certa
-   II. a relação LEFT JOIN exibe os registros da esquerda e somente os que coincidem na tabela da direita
-   III. Afirmativa certa
-   D. Questão certa
+6) I. Afirmativa certa.
+   II. a relação LEFT JOIN exibe os registros da esquerda e somente os que coincidem na tabela da direita.
+   III. Afirmativa certa.
+   D. Questão certa.
 
-7) A. Questão certa
+7) A. Questão certa.
    B. Para criar uma tabela utilizamos o comando CREATE TABLE invés de NEW TABLE e o comando DELETE apaga apenas um registro da tabela.
-   C e D: Estão erradas pois schema não é referente à tabela
+   C e D: Estão erradas pois schema não é referente à tabela.
    
-8) A.
-   B.
-   C. Questão certa
-   D.
-   E.
+8) Comandos do DDL: CREATE, DROP, ALTER.
+   Comandos do DML: INSERT, UPDATE, DELETE.
+   Comandos do DQL: SELECT.
+
+   Logo, todas as alternativas diferentes da ordem a seguir estão erradas:
+   (1) CREATE
+   (3) SELECT
+   (2) INSERT
+   (1) DROP
+   (2) DELETE
+   
+   E. Questão certa.
     
-9) A. o comando referente à sublinguagem DQL é o SELECT, e o SELECT é um comando para fazer consultas, ele não modifica os dados
-   B. os comandos de DCL são para controle e não para manipular os dados
-   C. *DSL não é uma sublinguagem do SQL* 
-   D. os comandos do DML (insert, update, delete) são comandos para manipular os dados dentro das tabelas e não as propriedades delas
-   E. Questão certa
+9) A. o comando referente à sublinguagem DQL é o SELECT, e o SELECT é um comando para fazer consultas, ele não modifica os dados.
+   B. os comandos de DCL são para controle e não para manipular os dados.
+   C. SQL é caracterizada como uma linguagem DSL (Domain Specific Language), logo DSL não é uma sublinguagem do SQL.
+   D. os comandos do DML (insert, update, delete) são comandos para manipular os dados dentro das tabelas e não as propriedades delas.
+   E. Questão certa.
    
-10) A. Questão certa
-    B. O comando dessa alternativa utiliza o NOT IN, neste caso ele não executaria o comando para os municípios do enunciado
-    C. Depois do UPDATE deveria ser o nome da tabela sem a condição CONFIRMADO = 'NÃO', e não o nome do campo, e o comando OR executaria o comando para um município ou outro invés de executar para os dois
-    D. Assim como na alternativa C, depois do comando UPDATE deveria ser o nome da tabela sem a condição CONFIRMADO = 'SIM' e não ter o comando AND
-    E. A utilização do OR executaria o comando apenas para um dos municípios invés 
+10) A. Questão certa.
+    B. O comando dessa alternativa utiliza o NOT IN, neste caso ele não executaria o comando para os municípios do enunciado.
+    C. Depois do UPDATE deveria ser o nome da tabela sem a condição CONFIRMADO = 'NÃO', e não o nome do campo, e o comando OR executaria o comando para um município 
+    ou outro invés de executar para os dois.
+    D. Assim como na alternativa C, depois do comando UPDATE deveria ser o nome da tabela sem a condição CONFIRMADO = 'SIM' e não ter o comando AND.
+    E. A utilização do OR executaria o comando apenas para um dos municípios invés.
