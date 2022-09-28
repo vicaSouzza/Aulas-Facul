@@ -17,11 +17,11 @@
    IV. A utilização de VIEWS garante a integridade do banco de dados, mas é preciso outros comandos pois ela por si só não é o suficiente para manter toda a integridade
    B. Questão certa
    
-4) A.
+4) A. 
    B.
    C. Questão certa
    D.
-   E.
+   E. 
 
 5) A.
    B.
@@ -51,7 +51,7 @@
    E. Questão certa
    
 10) A. Questão certa
-    B.
-    C.
-    D.
-    E.
+    B. O comando dessa alternativa utiliza o NOT IN, neste caso ele não executaria o comando para os municípios do enunciado
+    C. Depois do UPDATE deveria ser o nome da tabela sem a condição CONFIRMADO = 'NÃO', e não o nome do campo, e o comando OR executaria o comando para um município ou outro invés de executar para os dois
+    D. Assim como na alternativa C, depois do comando UPDATE deveria ser o nome da tabela sem a condição CONFIRMADO = 'SIM' e não ter o comando AND
+    E. A utilização do OR executaria o comando apenas para um dos municípios invés 
