@@ -8,14 +8,14 @@
 2) A. O segundo comando não irá excluir o banco de dados e o terceiro irá excluir todos os registros da tabela
    B. O terceiro comando irá excluir os registros da tabela
    C. O primeiro comando vai excluir um registro, o segundo não vai excluir o banco de dados, o terceiro comando 
-   D.
+   D. O primeiro comando vai excluir apenas o registro que tem como chave primária o valor 1, o segundo comando irá excluir a tabela, o terceiro comando irá excluir todos os registros de uma tabela e não o banco de dados
    E. Questão certa
 
-3) A.
+3) I. Afirmativa correta
+   II. Afirmativa correta
+   III. Não aumenta a performance do banco de dados pois o que aumenta a performance deste seria a distribuição dos dados dentro das tabelas
+   IV. A utilização de VIEWS garante a integridade do banco de dados, mas é preciso outros comandos pois ela por si só não é o suficiente para manter toda a integridade
    B. Questão certa
-   C.
-   D.
-   E.
    
 4) A.
    B.
@@ -25,15 +25,14 @@
 
 5) A.
    B.
-   C. Questão certa
+   C. 
    D.
-   E.
+   E. Questão certa
 
-6) A.
-   B.
-   C.
+6) I. Afirmativa certa
+   II. a relação LEFT JOIN exibe os registros da esquerda e somente os que coincidem na tabela da direita
+   III. Afirmativa certa
    D. Questão certa
-   E.
 
 7) A. Questão certa
    B. Para criar uma tabela utilizamos o comando CREATE TABLE invés de NEW TABLE e o comando DELETE apaga apenas um registro da tabela.
@@ -44,12 +43,12 @@
    C. Questão certa
    D.
    E.
-   
-9) A.
-   B.
-   C.
-   D. Questão certa
-   E.
+    
+9) A. o comando referente à sublinguagem DQL é o SELECT, e o SELECT é um comando para fazer consultas, ele não modifica os dados
+   B. os comandos de DCL são para controle e não para manipular os dados
+   C. *DSL não é uma sublinguagem do SQL* 
+   D. os comandos do DML (insert, update, delete) são comandos para manipular os dados dentro das tabelas e não as propriedades delas
+   E. Questão certa
    
 10) A. Questão certa
     B.
