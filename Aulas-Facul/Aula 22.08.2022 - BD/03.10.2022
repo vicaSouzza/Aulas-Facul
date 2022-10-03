@@ -1,0 +1,22 @@
+1-A) CREATE INDEX idx_cat_cod ON HQ (categoria_cod);
+
+ALTER TABLE HG ADD INDEX;
+idx_cat_cod (categoria_cod);
+
+1-B) SHOW INDEX HQ;
+
+1-C) SELECT Nome, Localizacao FROM HG USE INDEX idx_cod_cat WHERE cod_categoria = 3 ORDER BY Nome ASC;
+
+1-D) SELECT Nome FROM HQ USE INDEX idx_cod_cat WHERE AND < 2008 ORDER BY Nome ASC;
+
+1-E) Não, a base de dados é pequena e acaba não sendo perceptivel a diferença de velocidade;
+
+1-F) DROP INDEX idx_cod_cat ON HQ;
+
+1-G) Devido a proteção quanto a integridade dos registros chaveamento das colunas
+
+1-H)
+    SET FORENG_KEY_CHECKS = 0
+    ALTER TABLE HQ DROP ind_cod_cat;
+    
+1-I)  SHOW INDEX HQ;
