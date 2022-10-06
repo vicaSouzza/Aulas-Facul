@@ -68,6 +68,8 @@ class LinkedList:
             
             atual.next = None
             del proximo
+        else:
+            print("Lista vazia")
 
 meuNo = Node(10)
 meuNo1 = Node(11)
