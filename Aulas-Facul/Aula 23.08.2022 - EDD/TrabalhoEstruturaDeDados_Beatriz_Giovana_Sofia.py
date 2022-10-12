@@ -1,7 +1,3 @@
-#Beatriz de Souza Mantovani dos Reis - G22FAD6
-#Giovanna Zanetti - G181719
-#Sofia Gozzoli - F3428D6
-
 class Node:
     def __init__(self, data):
         self.data = data
@@ -15,7 +11,7 @@ class LinkedList:
     def printLista(self):
         atual = self.InicioDaLista
         
-        while atual.next is not None:
+        while atual is not None:
             print(atual.data)
             atual = atual.next
     
@@ -26,10 +22,10 @@ class LinkedList:
             proximo = atual.next
             cont = 1
             
-            while proximo.next is not None:
-                cont+=1
+            while proximo is not None:
                 atual = atual.next
                 proximo = atual.next
+                cont+=1
             
             atual.next = None
             print("\nQuantidade de elementos: ",cont)
@@ -82,31 +78,19 @@ class LinkedList:
  
     # Remover determinado elemento - não terminado
     def removeElemento(self):
-        if self.InicioDaLista is not None:
-            atual = self.InicioDaLista
-            proximo = atual.next
-            
-            if index == 0:
-                Lista.removeDoComeco()
-            else:
-                for i in range(1,index):
-                    if proximo:
-                        atual = proximo
-                        proximo = proximo.next
-                
-                atual.next = proximo.next
-                del proximo
-        else:
-            print("Lista vazia")
+        print("Você é trouxa")
 
-    # Item inserido na primeira posição - não terminado
-    def insereNoComeco(self):
+    # Item inserido na primeira posição - ajustar
+    def insereNoComeco(self, elemento):
         if self.InicioDaLista is not None:
-            atual = self.InicioDaLista
-            proximo = atual.next
+            
+            NovoNo = Node(elemento)
+            NovoNo.next = NovoNo
+            self.InicioDaLista = NovoNo
             
         else:
-            print("Lista vazia")
+            NovoNo = Node(elemento)
+            self.InicioDaLista = NovoNo
 
     # Item inserido na posição determinada - não terminado
     def insereNoPonto (self, index):
@@ -141,7 +125,7 @@ meuNo = Node(10)
 meuNo1 = Node(11)
 meuNo2 = Node(12)
 meuNo3 = Node(13)
-meuNo4 = Node(0) #ver como colocar isso dentro de um for
+meuNo4 = Node(0) 
 Lista.InicioDaLista = meuNo
 
 meuNo.next = meuNo1
@@ -154,14 +138,13 @@ Lista.printLista()
 
 Lista.quantElementos()
 
-Lista.removeDoFim()
 print("\nRemover item da última posição: ") 
-Lista.printLista()
+Lista.removeDoFim()
+Lista.printLista() #ajustar
 
-Lista.removeDoComeco()
 print("\nRemover item da primeira posição: ") 
+Lista.removeDoComeco()
 Lista.printLista()
-
 
 print("\nRemover item de posição determinada: ")
 index = int(input("Escolha a posição do nó que deseja remover: "))
@@ -171,6 +154,11 @@ Lista.printLista()
 print("\nRemover elemento determinado: ")
 elemento = int(input("Escolha o elemento que deseja remover: "))
 Lista.removeElemento()
+Lista.printLista()
+
+print("\nInserir no começo da lista: ")
+elemento = int(input("Digite o valor que deseja inserir: "))
+Lista.insereNoComeco(elemento)
 Lista.printLista()
 
 print("\nInserir no final da lista: ")
