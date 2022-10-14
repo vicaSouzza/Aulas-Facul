@@ -1,7 +1,6 @@
-# CC4P12
-# Beatriz Reis - G22FAD6
-# Sofia Gozzoli - F3428D6
-# Giovanna Zanetti - G181719
+# Beatriz Reis - G22FAD6 - CC4P12
+# Sofia Gozzoli - F3428D6 - CC3P12
+# Giovanna Zanetti - G181719 - CC4P12
 
 class Node:
     def __init__(self, data):
