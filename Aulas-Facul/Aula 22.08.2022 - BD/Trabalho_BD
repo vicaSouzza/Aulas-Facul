@@ -22,10 +22,9 @@ Categoria_imovel
 Info_Casa
   cod_casa
   cod_imovel pk
-  qtd_comodos
-  qtd_suites
-  qtd_garagem
-  numero_casa
+  qtd_comodos_casa
+  qtd_suites_casa
+  qtd_garagem_casa
   area_m2
   descricao
   
@@ -33,11 +32,10 @@ Info_Casa
  Info_AP
   cod_AP
   cod_imovel pk
-  qtd_comodos
-  qtd_suites
-  qtd_garagem
-  numero_ap
-  andar
+  qtd_comodos_AP
+  qtd_suites_AP
+  qtd_garagem_AP
+  numero_AP
   bloco
   valor_condomino
   area_m2
