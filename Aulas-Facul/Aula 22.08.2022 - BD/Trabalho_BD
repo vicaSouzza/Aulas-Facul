@@ -58,7 +58,21 @@ Info_Casa
     
  
   
-  
+Clientes
+ cod_cliente 
+ cod_imovel pk
+ cod_categoria pk
+ cod_rel_imobiliaria pk
+ nome_cliente
+ telefone
+ cpf
+ email
+
+
+Rel_imobiliaria
+ cod_rel_imobiliaria
+ relacao(se é vendedor/comprador etc)
+ 
   
   
   
