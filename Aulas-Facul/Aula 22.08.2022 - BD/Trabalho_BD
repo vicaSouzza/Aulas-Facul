@@ -76,4 +76,42 @@ Rel_imobiliaria
   
   
   
+Vendas_imobiliria
+ cod_vendas
+ cod_cliente pk
+ valor_venda
+ valor_comissao
+ cod_corretor pk
+ data_venda
+ 
+ 
+ Corretor
+  cod_corretor
+  nome_corretor
+  cod_venda pk
+  porcentagem_comissao
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
   
