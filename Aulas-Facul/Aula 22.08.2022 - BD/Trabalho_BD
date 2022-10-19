@@ -1,0 +1,65 @@
+tabela_imoveis:
+ cod_imovel
+ endereço
+ data_construção
+ cod_categoria pk
+ bairro
+ valor
+ 
+ 
+ Status_imovel
+  status_imovel
+  cod_status
+  cod_imovel pk
+  
+  
+Categoria_imovel
+  cod_categoria
+  categoria
+  
+  
+  
+Info_Casa
+  cod_casa
+  cod_imovel pk
+  qtd_comodos
+  qtd_suites
+  qtd_garagem
+  numero_casa
+  area_m2
+  descricao
+  
+  
+ Info_AP
+  cod_AP
+  cod_imovel pk
+  qtd_comodos
+  qtd_suites
+  qtd_garagem
+  numero_ap
+  andar
+  bloco
+  valor_condomino
+  area_m2
+  descricao
+  
+  
+  Info_Comercial
+    cod_comercial
+    cod_imovel pk
+    area_m2
+    qtd_banheiros
+    
+  Info_terreno
+    cod_terreno
+    cod_imovel pk
+    area_m2
+    possui_aclive_declive
+    
+ 
+  
+  
+  
+  
+  
+  
