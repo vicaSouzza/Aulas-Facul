@@ -9,7 +9,7 @@ categoria VARCHAR(20) NOT NULL
 CREATE TABLE Imoveis(
 cod_imovel INT PRIMARY KEY,
 endereço VARCHAR (30) NOT NULL,
-data_construção VARCHAR (10) NOT NULL, 
+data_construção DATE NOT NULL, 
 bairro VARCHAR (30) NOT NULL,
 valor DECIMAL (8,2) NOT NULL,
 cod_categoriaFK INT NOT NULL,
@@ -98,7 +98,7 @@ CREATE TABLE Vendas(
 cod_vendas INT PRIMARY KEY,
 valor_venda DECIMAL(8,2) NOT NULL,
 valor_comissao DECIMAL(8,2) NOT NULL,
-data_venda VARCHAR (10) NOT NULL,
+data_venda DATE NOT NULL,
 cod_clienteFK_vendas INT NOT NULL,
 FOREIGN KEY (cod_clienteFK_vendas) REFERENCES  Clientes(cod_cliente),
 cod_corretor_vendas INT NOT NULL,
