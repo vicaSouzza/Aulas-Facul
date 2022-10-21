@@ -1,3 +1,4 @@
+
 CREATE DATABASE Imobiliaria;
 USE Imobiliaria;
 
@@ -117,3 +118,67 @@ cod_corretor_vendas INT NOT NULL,
 FOREIGN KEY (cod_corretor_vendas) REFERENCES  Corretor(cod_corretor)
 );
 
+INSERT INTO categoria_imovel (categoria) VALUES ('Casa');
+INSERT INTO categoria_imovel (categoria) VALUES ('Apartamento');
+INSERT INTO categoria_imovel (categoria) VALUES ('Terreno');
+INSERT INTO categoria_imovel (categoria) VALUES ('Comercial');
+
+
+INSERT INTO imoveis (foto_imovel, endereço, numero_casa, data_construção, bairro, valor, cod_categoriaFK) VALUES ( 'visão_geral_casa.jpg', 'Mineiros do Tiete', 159 ,'2002-10-09', 'Vila Pompeia', 120000.00, 1);
+INSERT INTO imoveis (foto_imovel, endereço, numero_casa, data_construção, bairro, valor, cod_categoriaFK) VALUES ( 'visão_geral_casa2.jpg', 'Rua São José dos Campos', 732 ,'2019-02-01', 'Jardim do Trevo', 2000.00, 1);
+INSERT INTO imoveis (foto_imovel, endereço, numero_casa, data_construção, bairro, valor, cod_categoriaFK) VALUES ( 'visão_geral_apartamento.jpg', 'Rua Abel Luiz Ferreira', 277 ,'2022-12-10', 'Jardim do Lago', 350000.00, 2);
+INSERT INTO imoveis (foto_imovel, endereço, numero_casa, data_construção, bairro, valor, cod_categoriaFK) VALUES ('visão_geral_apartamento2.jpg', 'Rua Abel ', 377 ,'2020-12-10', 'Jardim do Mato', 10000.00, 2);
+INSERT INTO imoveis (foto_imovel, endereço, numero_casa, data_construção, bairro, valor, cod_categoriaFK) VALUES ( 'visão_geral_terreno.jpg', 'Rua São José ', 250 ,'2017-02-01', 'Jardim dos Amarais', 550000.00, 3);
+INSERT INTO imoveis (foto_imovel, endereço, numero_casa, data_construção, bairro, valor, cod_categoriaFK) VALUES ('visão_geral_terreno2.jpg', 'Rua Amapá ', 150 ,'2022-10-11', 'Jardim das Cascavéis', 600000.00, 3);
+INSERT INTO imoveis (foto_imovel, endereço, numero_casa, data_construção, bairro, valor, cod_categoriaFK) VALUES ( 'visão_geral_comercial.jpg', 'Rua Amazonas ', 900 ,'1999-12-01', 'Jardim das Corais', 3000.00, 4);
+INSERT INTO imoveis (foto_imovel, endereço, numero_casa, data_construção, bairro, valor, cod_categoriaFK) VALUES ( 'visão_geral_comercial2.jpg', 'Rua Minas Gerais ', 300 ,'2000-12-01', 'Jardim do Beco', 1000, 4);
+
+
+INSERT INTO status_imovel (status_imovel, cod_imovelFK_statusImovel) VALUES ( 'Vendido', 1);
+INSERT INTO status_imovel (status_imovel, cod_imovelFK_statusImovel) VALUES ( 'Vendido', 2);
+INSERT INTO status_imovel (status_imovel, cod_imovelFK_statusImovel) VALUES ( 'Alugado', 3);
+INSERT INTO status_imovel (status_imovel, cod_imovelFK_statusImovel) VALUES ( 'Alugado', 4);
+INSERT INTO status_imovel (status_imovel, cod_imovelFK_statusImovel) VALUES ( 'Vende-se', 5);
+INSERT INTO status_imovel (status_imovel, cod_imovelFK_statusImovel) VALUES ( 'Vende-se', 6);
+INSERT INTO status_imovel (status_imovel, cod_imovelFK_statusImovel) VALUES ( 'Aluga-se', 7);
+INSERT INTO status_imovel (status_imovel, cod_imovelFK_statusImovel) VALUES ( 'Aluga-se', 8);
+
+
+INSERT INTO info_casa (QTDQuartos, QTDSuites, QTDSala_estar, QTDSala_jantar, QTDGaragem, area_m2, armario_embutido, descricao, cod_imovelFK_casa) VALUES ( 3, 1, 1, 1, 2, '1000m2', 'Sim', 'Casa com 3 armários embutidos e garagem coberta', 1);
+INSERT INTO info_casa (QTDQuartos, QTDSuites, QTDSala_estar, QTDSala_jantar, QTDGaragem, area_m2, armario_embutido, descricao, cod_imovelFK_casa) VALUES ( 1, 1, 1, 1, 1, '1500m2', 'Não', 'Casa com piscina aquecida e churrasqueira', 2);
+
+
+INSERT INTO info_ap (QTDQuartos, QTDSuites, QTDSala_estar, QTDSala_jantar, QTDGaragem, area_m2, armario_embutido, descricao, andar, ValorCondominio, portaria_24h, cod_imovelFK_ap) VALUES (2, 1, 1, 1, 2, 90, 'Sim', 'Apartamento com vista para o mar' ,10, 350, 'Sim', 3);
+INSERT INTO info_ap (QTDQuartos, QTDSuites, QTDSala_estar, QTDSala_jantar, QTDGaragem, area_m2, armario_embutido, descricao, andar, ValorCondominio, portaria_24h, cod_imovelFK_ap) VALUES (2, 0, 1, 1, 1, 80, 'Não', 'Garagem coberta' ,20, 400, 'Sim', 4);
+   
+
+INSERT INTO info_terreno (area_m2, largura, comprimento, possui_aclive_declive, cod_imovelFK_terreno) VALUES (100, 250, 300, 'Não Possui Aclive nem Declive', 5);
+INSERT INTO info_terreno (area_m2, largura, comprimento, possui_aclive_declive, cod_imovelFK_terreno) VALUES (300, 500, 700, 'Possui Aclive', 6);
+
+
+INSERT INTO info_comercial (area_m2, QTDBanheiros, QTDComodos, cod_imovelFK_comercial) VALUES (80, 2, 2, 7);
+INSERT INTO info_comercial (area_m2, QTDBanheiros, QTDComodos, cod_imovelFK_comercial) VALUES (60, 1, 1, 8);
+
+
+INSERT INTO rel_imobiliaria (relacao) VALUES ('Inquilino');
+INSERT INTO rel_imobiliaria (relacao) VALUES ('Locatário');
+INSERT INTO rel_imobiliaria (relacao) VALUES ('Comprador');
+INSERT INTO rel_imobiliaria (relacao) VALUES ('Vendedor');
+
+
+INSERT INTO Clientes (nome_cliente, telefone, cpf, email, cod_imovelFK_clientes, cod_categoriafk_clientes,cod_rel_imobiliariaFK_clientes) VALUES ('Giovanna Zanetti', '(019) 9974068631',  '45515577819', 'giihzanetti@outlook.com', 1, 1 ,1);
+INSERT INTO Clientes (nome_cliente, telefone, cpf, email, cod_imovelFK_clientes, cod_categoriafk_clientes,cod_rel_imobiliariaFK_clientes) VALUES ('Beatriz Reis', '(019) 997195444',  '12345678910', 'beatriz_reis@outlook.com', 2, 2 ,2);
+INSERT INTO Clientes (nome_cliente, telefone, cpf, email, cod_imovelFK_clientes, cod_categoriafk_clientes,cod_rel_imobiliariaFK_clientes) VALUES ('Elizabeth Weber', '(019) 998417922',  '03876538312', 'lizweberjoui@outlook.com', 3, 3 ,3);
+INSERT INTO Clientes (nome_cliente, telefone, cpf, email, cod_imovelFK_clientes, cod_categoriafk_clientes,cod_rel_imobiliariaFK_clientes) VALUES ('Thiago Fritz', '(019) 997403269',  '98344419265', 'thiagao@outlook.com', 4, 4 ,4);
+
+
+INSERT INTO Corretor(nome_corretor, porcentagem_comissao, cod_clienteFK_corretor) VALUES ('Cezar Cohen', 5.00, 1);
+INSERT INTO Corretor(nome_corretor, porcentagem_comissao, cod_clienteFK_corretor) VALUES ('Arthur Cervero', 7.00, 2);
+INSERT INTO Corretor(nome_corretor, porcentagem_comissao, cod_clienteFK_corretor) VALUES ('Cristopher Cohen', 6.00, 3);
+INSERT INTO Corretor(nome_corretor, porcentagem_comissao, cod_clienteFK_corretor) VALUES ('Joui Jouki', 4.00, 4);
+
+
+INSERT INTO Vendas(valor_venda,valor_comissao,data_venda,valor_aluguel,comissao_aluguel,data_alugado,cod_clienteFK_vendas,cod_corretor_vendas) VALUES (280000.00, 1000.00, 2022-01-01, 1200.00, 8.00, 2022-10-21, 1, 1);
+INSERT INTO Vendas(valor_venda,valor_comissao,data_venda,valor_aluguel,comissao_aluguel,data_alugado,cod_clienteFK_vendas,cod_corretor_vendas) VALUES (230000.00, 1000.00, 2022-09-07, 1000.00, 5.00, 2022-10-19, 2, 2);
+INSERT INTO Vendas(valor_venda,valor_comissao,data_venda,valor_aluguel,comissao_aluguel,data_alugado,cod_clienteFK_vendas,cod_corretor_vendas) VALUES (350000.00, 1000.00, 2022-01-04, 2500.00, 10.00, 2022-10-18, 3, 3);
+INSERT INTO Vendas(valor_venda,valor_comissao,data_venda,valor_aluguel,comissao_aluguel,data_alugado,cod_clienteFK_vendas,cod_corretor_vendas) VALUES (900000.00, 1000.00, 2022-10-15, 6000.00, 25.00, 2022-10-17, 4, 4);
