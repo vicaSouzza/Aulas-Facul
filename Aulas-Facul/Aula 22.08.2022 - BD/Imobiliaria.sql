@@ -12,7 +12,7 @@ CREATE TABLE Imoveis(
 cod_imovel INT PRIMARY KEY  AUTO_INCREMENT,
 foto_imovel VARCHAR (50) NOT NULL,
 endereço VARCHAR (30) NOT NULL,
-numero DECIMAL (8) NOT NULL,
+cidade VARCHAR (30) NOT NULL,
 data_construcao DATE NOT NULL, 
 bairro VARCHAR (30) NOT NULL,
 valor DECIMAL (8,2) NOT NULL,
@@ -84,7 +84,7 @@ relacao VARCHAR(15) NOT NULL
  
 CREATE TABLE Clientes (
 cod_cliente INT PRIMARY KEY  AUTO_INCREMENT,
-nome_cliente VARCHAR(30) NOT NULL,
+cliente VARCHAR(30) NOT NULL,
 telefone VARCHAR(13) NOT NULL,
 cpf VARCHAR(11) NOT NULL,
 email VARCHAR (30) NOT NULL,
@@ -124,14 +124,14 @@ INSERT INTO categoria_imovel (categoria) VALUES ('Terreno');
 INSERT INTO categoria_imovel (categoria) VALUES ('Comercial');
 
 
-INSERT INTO imoveis (foto_imovel, endereço, numero, data_construcao, bairro, valor, cod_categoriaFK) VALUES ( 'visão_geral_casa.jpg', 'Mineiros do Tiete', 159 ,'2002-10-09', 'Vila Pompeia', 120000.00, 1);
-INSERT INTO imoveis (foto_imovel, endereço, numero, data_construcao, bairro, valor, cod_categoriaFK) VALUES ( 'visão_geral_casa2.jpg', 'Rua São José dos Campos', 732 ,'2019-02-01', 'Jardim do Trevo', 2000.00, 1);
-INSERT INTO imoveis (foto_imovel, endereço, numero, data_construcao, bairro, valor, cod_categoriaFK) VALUES ( 'visão_geral_apartamento.jpg', 'Rua Abel Luiz Ferreira', 277 ,'2022-12-10', 'Jardim do Lago', 350000.00, 2);
-INSERT INTO imoveis (foto_imovel, endereço, numero, data_construcao, bairro, valor, cod_categoriaFK) VALUES ('visão_geral_apartamento2.jpg', 'Rua Abel ', 377 ,'2020-12-10', 'Jardim do Mato', 10000.00, 2);
-INSERT INTO imoveis (foto_imovel, endereço, numero, data_construcao, bairro, valor, cod_categoriaFK) VALUES ( 'visão_geral_terreno.jpg', 'Rua São José ', 250 ,'2017-02-01', 'Jardim dos Amarais', 550000.00, 3);
-INSERT INTO imoveis (foto_imovel, endereço, numero, data_construcao, bairro, valor, cod_categoriaFK) VALUES ('visão_geral_terreno2.jpg', 'Rua Amapá ', 150 ,'2022-10-11', 'Jardim das Cascavéis', 600000.00, 3);
-INSERT INTO imoveis (foto_imovel, endereço, numero, data_construcao, bairro, valor, cod_categoriaFK) VALUES ( 'visão_geral_comercial.jpg', 'Rua Amazonas ', 900 ,'1999-12-01', 'Jardim das Corais', 3000.00, 4);
-INSERT INTO imoveis (foto_imovel, endereço, numero, data_construcao, bairro, valor, cod_categoriaFK) VALUES ( 'visão_geral_comercial2.jpg', 'Rua Minas Gerais ', 300 ,'2000-12-01', 'Jardim do Beco', 1000, 4);
+INSERT INTO imoveis (foto_imovel, endereço, cidade, data_construcao, bairro, valor, cod_categoriaFK) VALUES ( 'visão_geral_casa.jpg', 'Mineiros do Tiete', 'Campinas' ,'2002-10-09', 'Vila Pompeia', 120000.00, 1);
+INSERT INTO imoveis (foto_imovel, endereço, cidade, data_construcao, bairro, valor, cod_categoriaFK) VALUES ( 'visão_geral_casa2.jpg', 'Rua São José dos Campos', 'Campos do Jordão' ,'2019-02-01', 'Jardim do Trevo', 2000.00, 1);
+INSERT INTO imoveis (foto_imovel, endereço, cidade, data_construcao, bairro, valor, cod_categoriaFK) VALUES ( 'visão_geral_apartamento.jpg', 'Rua Abel Luiz Ferreira', 'Batatais' ,'2022-12-10', 'Jardim do Lago', 350000.00, 2);
+INSERT INTO imoveis (foto_imovel, endereço, cidade, data_construcao, bairro, valor, cod_categoriaFK) VALUES ('visão_geral_apartamento2.jpg', 'Rua Abel ', 'Adamantina' ,'2020-12-10', 'Jardim do Mato', 10000.00, 2);
+INSERT INTO imoveis (foto_imovel, endereço, cidade, data_construcao, bairro, valor, cod_categoriaFK) VALUES ( 'visão_geral_terreno.jpg', 'Rua São José ', 'Jundiaí' ,'2017-02-01', 'Jardim dos Amarais', 550000.00, 3);
+INSERT INTO imoveis (foto_imovel, endereço, cidade, data_construcao, bairro, valor, cod_categoriaFK) VALUES ('visão_geral_terreno2.jpg', 'Rua Amapá ', 'Ubatuba' ,'2022-10-11', 'Jardim das Cascavéis', 600000.00, 3);
+INSERT INTO imoveis (foto_imovel, endereço, cidade, data_construcao, bairro, valor, cod_categoriaFK) VALUES ( 'visão_geral_comercial.jpg', 'Rua Amazonas ', 'Umuarama' ,'1999-12-01', 'Jardim das Corais', 3000.00, 4);
+INSERT INTO imoveis (foto_imovel, endereço, cidade, data_construcao, bairro, valor, cod_categoriaFK) VALUES ( 'visão_geral_comercial2.jpg', 'Rua Minas Gerais ', 'Argentina' ,'2000-12-01', 'Jardim do Beco', 1000, 4);
 
 
 INSERT INTO status_imovel (status_imovel, cod_imovelFK_statusImovel) VALUES ( 'Vendido', 1);
