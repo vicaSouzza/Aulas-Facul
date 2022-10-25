@@ -1,7 +1,6 @@
 CREATE DATABASE Imobiliaria;
 USE Imobiliaria;
 
-
 CREATE TABLE Categoria_imovel( 
 cod_categoria INT PRIMARY KEY  AUTO_INCREMENT, 
 categoria VARCHAR(20) NOT NULL
@@ -80,7 +79,7 @@ CREATE TABLE Rel_imobiliaria (
 cod_rel_imobiliaria INT PRIMARY KEY  AUTO_INCREMENT,
 relacao VARCHAR(15) NOT NULL
 );
- 
+
 CREATE TABLE Clientes (
 cod_cliente INT PRIMARY KEY  AUTO_INCREMENT,
 nome VARCHAR(30) NOT NULL,
@@ -89,12 +88,10 @@ cpf VARCHAR(11) NOT NULL,
 email VARCHAR (30) NOT NULL,
 cod_imovelFK_clientes INT NOT NULL,
 FOREIGN KEY (cod_imovelFK_clientes) REFERENCES Imoveis(cod_imovel),
-cod_categoriafk_clientes INT NOT NULL,
-FOREIGN KEY (cod_imovelFK_clientes) REFERENCES Categoria_imovel(cod_categoria),
 cod_rel_imobiliariaFK_clientes INT NOT NULL,
-FOREIGN KEY (cod_imovelFK_clientes) REFERENCES  Rel_imobiliaria(cod_rel_imobiliaria)
+FOREIGN KEY (cod_rel_imobiliariaFK_clientes) REFERENCES  Rel_imobiliaria(cod_rel_imobiliaria)
 );
- 
+
 CREATE TABLE Corretor (
 cod_corretor INT PRIMARY KEY  AUTO_INCREMENT,
 nome_corretor VARCHAR(30) NOT NULL,
@@ -102,9 +99,10 @@ porcentagem_comissao DECIMAL(3,2) NOT NULL,
 cod_clienteFK_corretor INT NOT NULL,
 FOREIGN KEY (cod_clienteFK_corretor) REFERENCES  Clientes(cod_cliente)
 );
+ 
 
 CREATE TABLE Vendas(
-cod_vendas INT PRIMARY KEY  AUTO_INCREMENT,
+cod_vendas INT PRIMARY KEY AUTO_INCREMENT,
 valor_venda DECIMAL(8,2) NOT NULL,
 valor_comissao DECIMAL(8,2) NOT NULL,
 data_venda DATE NOT NULL,
@@ -115,15 +113,16 @@ FOREIGN KEY (cod_corretor_vendas) REFERENCES  Corretor(cod_corretor)
 );
 
 CREATE TABLE Aluguel (
-    cod_aluguel INT PRIMARY KEY AUTO_INCREMENT,
-    valor_aluguel DECIMAL(8,2) NOT NULL,
-    valor_comissao DECIMAL(8,2) NOT NULL,
-	comissao_aluguel DECIMAL(8,2) NOT NULL,
-    data_alugado DATE NOT NULL,
-    cod_clienteFK_vendas INT NOT NULL,
-    FOREIGN KEY (cod_clienteFK_vendas) REFERENCES  Clientes(cod_cliente),
-    cod_corretor_vendas INT NOT NULL,
-    FOREIGN KEY (cod_corretor_vendas) REFERENCES  Corretor(cod_corretor),
+cod_aluguel INT PRIMARY KEY AUTO_INCREMENT,
+valor_aluguel DECIMAL(8,2) NOT NULL,
+valor_comissao DECIMAL(8,2) NOT NULL,
+comissao_aluguel DECIMAL(8,2) NOT NULL,
+data_alugado DATE NOT NULL,
+cod_clienteFK_aluguel INT NOT NULL,
+FOREIGN KEY (cod_clienteFK_aluguel) REFERENCES  Clientes(cod_cliente),
+cod_corretor_aluguel INT NOT NULL,
+FOREIGN KEY (cod_corretor_aluguel) REFERENCES  Corretor(cod_corretor)
+);
     
 
 INSERT INTO categoria_imovel (categoria) VALUES ('Casa');
@@ -174,10 +173,10 @@ INSERT INTO rel_imobiliaria (relacao) VALUES ('Comprador');
 INSERT INTO rel_imobiliaria (relacao) VALUES ('Vendedor');
 
 
-INSERT INTO Clientes (nome, telefone, cpf, email, cod_imovelFK_clientes, cod_categoriafk_clientes,cod_rel_imobiliariaFK_clientes) VALUES ('Giovanna Zanetti', '(019) 9974068631',  '45515577819', 'giihzanetti@outlook.com', 1, 1 ,1);
-INSERT INTO Clientes (nome, telefone, cpf, email, cod_imovelFK_clientes, cod_categoriafk_clientes,cod_rel_imobiliariaFK_clientes) VALUES ('Beatriz Reis', '(019) 997195444',  '12345678910', 'beatriz_reis@outlook.com', 2, 2 ,2);
-INSERT INTO Clientes (nome, telefone, cpf, email, cod_imovelFK_clientes, cod_categoriafk_clientes,cod_rel_imobiliariaFK_clientes) VALUES ('Elizabeth Weber', '(019) 998417922',  '03876538312', 'lizweberjoui@outlook.com', 3, 3 ,3);
-INSERT INTO Clientes (nome, telefone, cpf, email, cod_imovelFK_clientes, cod_categoriafk_clientes,cod_rel_imobiliariaFK_clientes) VALUES ('Thiago Fritz', '(019) 997403269',  '98344419265', 'thiagao@outlook.com', 4, 4 ,4);
+INSERT INTO Clientes (nome, telefone, cpf, email, cod_imovelFK_clientes,cod_rel_imobiliariaFK_clientes) VALUES ('Giovanna Zanetti', '(019) 9974068631',  '45515577819', 'giihzanetti@outlook.com', 1, 1);
+INSERT INTO Clientes (nome, telefone, cpf, email, cod_imovelFK_clientes,cod_rel_imobiliariaFK_clientes) VALUES ('Beatriz Reis', '(019) 997195444',  '12345678910', 'beatriz_reis@outlook.com', 2, 2);
+INSERT INTO Clientes (nome, telefone, cpf, email, cod_imovelFK_clientes,cod_rel_imobiliariaFK_clientes) VALUES ('Elizabeth Weber', '(019) 998417922',  '03876538312', 'lizweberjoui@outlook.com', 3, 3);
+INSERT INTO Clientes (nome, telefone, cpf, email, cod_imovelFK_clientes,cod_rel_imobiliariaFK_clientes) VALUES ('Thiago Fritz', '(019) 997403269',  '98344419265', 'thiagao@outlook.com', 4, 4);
 
 INSERT INTO Corretor(nome_corretor, porcentagem_comissao, cod_clienteFK_corretor) VALUES ('Cezar Cohen', 5.00, 1);
 INSERT INTO Corretor(nome_corretor, porcentagem_comissao, cod_clienteFK_corretor) VALUES ('Arthur Cervero', 7.00, 2);
@@ -185,7 +184,9 @@ INSERT INTO Corretor(nome_corretor, porcentagem_comissao, cod_clienteFK_corretor
 INSERT INTO Corretor(nome_corretor, porcentagem_comissao, cod_clienteFK_corretor) VALUES ('Joui Jouki', 4.00, 4);
 
 
-INSERT INTO Vendas(valor_venda,valor_comissao,data_venda,valor_aluguel,comissao_aluguel,data_alugado,cod_clienteFK_vendas,cod_corretor_vendas) VALUES (280000.00, 1000.00, 2022-01-01, NULL, NULL, NULL, 1, 1);
-INSERT INTO Vendas(valor_venda,valor_comissao,data_venda,valor_aluguel,comissao_aluguel,data_alugado,cod_clienteFK_vendas,cod_corretor_vendas) VALUES (230000.00, 1000.00, 2022-09-07, NULL, NULL, NULL, 2, 2);
-INSERT INTO Vendas(valor_venda,valor_comissao,data_venda,valor_aluguel,comissao_aluguel,data_alugado,cod_clienteFK_vendas,cod_corretor_vendas) VALUES (NULL, NULL,NULL, 2500.00, 10.00, 2022-10-18, 3, 3);
-INSERT INTO Vendas(valor_venda,valor_comissao,data_venda,valor_aluguel,comissao_aluguel,data_alugado,cod_clienteFK_vendas,cod_corretor_vendas) VALUES (NULL, NULL,NULL, 6000.00, 25.00, 2022-10-17, 4, 4);
+INSERT INTO Vendas(valor_venda, valor_comissao, data_venda, cod_clienteFK_vendas, cod_corretor_vendas) VALUES (230000.00, 18400.00, '2022-10-22', 1, 1);
+INSERT INTO Vendas(valor_venda, valor_comissao, data_venda, cod_clienteFK_vendas, cod_corretor_vendas) VALUES (500000.00, 25000.00, '2022-10-21', 2, 2);
+
+INSERT INTO Aluguel(valor_aluguel, valor_comissao, comissao_aluguel, data_alugado, cod_clienteFK_aluguel, cod_corretor_aluguel) VALUES (530000.00, 42400.00, 8.0 , '2022-09-08', 3, 3);
+    
+INSERT INTO Aluguel(valor_aluguel, valor_comissao, comissao_aluguel, data_alugado, cod_clienteFK_aluguel, cod_corretor_aluguel) VALUES (580000.00, 48400.00, 5.0 , '2022-09-07', 4, 4);
