@@ -1,7 +1,6 @@
 CREATE DATABASE Imobiliaria;
 USE Imobiliaria;
 
-
 CREATE TABLE Categoria_imovel( 
 cod_categoria INT PRIMARY KEY  AUTO_INCREMENT, 
 categoria VARCHAR(20) NOT NULL
@@ -80,7 +79,7 @@ CREATE TABLE Rel_imobiliaria (
 cod_rel_imobiliaria INT PRIMARY KEY  AUTO_INCREMENT,
 relacao VARCHAR(15) NOT NULL
 );
- 
+
 CREATE TABLE Clientes (
 cod_cliente INT PRIMARY KEY  AUTO_INCREMENT,
 nome VARCHAR(30) NOT NULL,
@@ -89,12 +88,10 @@ cpf VARCHAR(11) NOT NULL,
 email VARCHAR (30) NOT NULL,
 cod_imovelFK_clientes INT NOT NULL,
 FOREIGN KEY (cod_imovelFK_clientes) REFERENCES Imoveis(cod_imovel),
-cod_categoriafk_clientes INT NOT NULL,
-FOREIGN KEY (cod_imovelFK_clientes) REFERENCES Categoria_imovel(cod_categoria),
 cod_rel_imobiliariaFK_clientes INT NOT NULL,
-FOREIGN KEY (cod_imovelFK_clientes) REFERENCES  Rel_imobiliaria(cod_rel_imobiliaria)
+FOREIGN KEY (cod_rel_imobiliariaFK_clientes) REFERENCES  Rel_imobiliaria(cod_rel_imobiliaria)
 );
- 
+
 CREATE TABLE Corretor (
 cod_corretor INT PRIMARY KEY  AUTO_INCREMENT,
 nome_corretor VARCHAR(30) NOT NULL,
@@ -102,28 +99,34 @@ porcentagem_comissao DECIMAL(3,2) NOT NULL,
 cod_clienteFK_corretor INT NOT NULL,
 FOREIGN KEY (cod_clienteFK_corretor) REFERENCES  Clientes(cod_cliente)
 );
+ 
 
 CREATE TABLE Vendas(
-cod_vendas INT PRIMARY KEY  AUTO_INCREMENT,
+cod_vendas INT PRIMARY KEY AUTO_INCREMENT,
 valor_venda DECIMAL(8,2) NOT NULL,
 valor_comissao DECIMAL(8,2) NOT NULL,
 data_venda DATE NOT NULL,
-cod_clienteFK_vendas INT NOT NULL,
-FOREIGN KEY (cod_clienteFK_vendas) REFERENCES  Clientes(cod_cliente),
+cod_clienteFK_vendedor INT NOT NULL,
+FOREIGN KEY (cod_clienteFK_vendedor) REFERENCES  Clientes(cod_cliente),
+cod_clienteFK_comprador INT NOT NULL,
+FOREIGN KEY (cod_clienteFK_comprador) REFERENCES  Clientes(cod_cliente),
 cod_corretor_vendas INT NOT NULL,
 FOREIGN KEY (cod_corretor_vendas) REFERENCES  Corretor(cod_corretor)
 );
 
 CREATE TABLE Aluguel (
-    cod_aluguel INT PRIMARY KEY AUTO_INCREMENT,
-    valor_aluguel DECIMAL(8,2) NOT NULL,
-    valor_comissao DECIMAL(8,2) NOT NULL,
-	comissao_aluguel DECIMAL(8,2) NOT NULL,
-    data_alugado DATE NOT NULL,
-    cod_clienteFK_vendas INT NOT NULL,
-    FOREIGN KEY (cod_clienteFK_vendas) REFERENCES  Clientes(cod_cliente),
-    cod_corretor_vendas INT NOT NULL,
-    FOREIGN KEY (cod_corretor_vendas) REFERENCES  Corretor(cod_corretor),
+cod_aluguel INT PRIMARY KEY AUTO_INCREMENT,
+valor_aluguel DECIMAL(8,2) NOT NULL,
+valor_comissao DECIMAL(8,2) NOT NULL,
+comissao_aluguel DECIMAL(8,2) NOT NULL,
+data_alugado DATE NOT NULL,
+cod_clienteFK_locatario INT NOT NULL,
+FOREIGN KEY (cod_clienteFK_locatario) REFERENCES  Clientes(cod_cliente),
+cod_clienteFK_inquilino INT NOT NULL,
+FOREIGN KEY (cod_clienteFK_inquilino) REFERENCES  Clientes(cod_cliente),
+cod_corretor_aluguel INT NOT NULL,
+FOREIGN KEY (cod_corretor_aluguel) REFERENCES  Corretor(cod_corretor)
+);
     
 
 INSERT INTO categoria_imovel (categoria) VALUES ('Casa');
@@ -132,20 +135,20 @@ INSERT INTO categoria_imovel (categoria) VALUES ('Terreno');
 INSERT INTO categoria_imovel (categoria) VALUES ('Comercial');
 
 
-INSERT INTO imoveis (foto, endereco, cidade, data_construcao, bairro, valor, cod_categoriaFK) VALUES ( 'visão_geral_casa.jpg', 'Mineiros do Tiete', 'Campinas' ,'2002-10-09', 'Vila Pompeia', 120000.00, 1);
+INSERT INTO imoveis (foto, endereco, cidade, data_construcao, bairro, valor, cod_categoriaFK) VALUES ( 'visão_geral_casa.jpg', 'Mineiros do Tiete', 'Campinas' ,'2002-10-09', 'Vila Pompeia', 300000.00, 1);
 INSERT INTO imoveis (foto, endereco, cidade, data_construcao, bairro, valor, cod_categoriaFK) VALUES ( 'visão_geral_casa2.jpg', 'Rua São José dos Campos', 'Campos do Jordão' ,'2019-02-01', 'Jardim do Trevo', 2000.00, 1);
 INSERT INTO imoveis (foto, endereco, cidade, data_construcao, bairro, valor, cod_categoriaFK) VALUES ( 'visão_geral_apartamento.jpg', 'Rua Abel Luiz Ferreira', 'Batatais' ,'2022-12-10', 'Jardim do Lago', 350000.00, 2);
 INSERT INTO imoveis (foto, endereco, cidade, data_construcao, bairro, valor, cod_categoriaFK) VALUES ('visão_geral_apartamento2.jpg', 'Rua Abel ', 'Adamantina' ,'2020-12-10', 'Jardim do Mato', 10000.00, 2);
 INSERT INTO imoveis (foto, endereco, cidade, data_construcao, bairro, valor, cod_categoriaFK) VALUES ( 'visão_geral_terreno.jpg', 'Rua São José ', 'Jundiaí' ,'2017-02-01', 'Jardim dos Amarais', 550000.00, 3);
 INSERT INTO imoveis (foto, endereco, cidade, data_construcao, bairro, valor, cod_categoriaFK) VALUES ('visão_geral_terreno2.jpg', 'Rua Amapá ', 'Ubatuba' ,'2022-10-11', 'Jardim das Cascavéis', 600000.00, 3);
 INSERT INTO imoveis (foto, endereco, cidade, data_construcao, bairro, valor, cod_categoriaFK) VALUES ( 'visão_geral_comercial.jpg', 'Rua Amazonas ', 'Umuarama' ,'1999-12-01', 'Jardim das Corais', 3000.00, 4);
-INSERT INTO imoveis (foto, endereco, cidade, data_construcao, bairro, valor, cod_categoriaFK) VALUES ( 'visão_geral_comercial2.jpg', 'Rua Minas Gerais ', 'Argentina' ,'2000-12-01', 'Jardim do Beco', 1000, 4);
+INSERT INTO imoveis (foto, endereco, cidade, data_construcao, bairro, valor, cod_categoriaFK) VALUES ( 'visão_geral_comercial2.jpg', 'Rua Minas Gerais ', 'Argentina' ,'2000-12-01', 'Jardim do Beco', 1000.00, 4);
 
 
 INSERT INTO status_imovel (status_imovel, cod_imovelFK_statusImovel) VALUES ( 'Vendido', 1);
-INSERT INTO status_imovel (status_imovel, cod_imovelFK_statusImovel) VALUES ( 'Vendido', 2);
-INSERT INTO status_imovel (status_imovel, cod_imovelFK_statusImovel) VALUES ( 'Alugado', 3);
-INSERT INTO status_imovel (status_imovel, cod_imovelFK_statusImovel) VALUES ( 'Alugado', 4);
+INSERT INTO status_imovel (status_imovel, cod_imovelFK_statusImovel) VALUES ( 'Alugado', 2);
+INSERT INTO status_imovel (status_imovel, cod_imovelFK_statusImovel) VALUES ( 'Vendido', 3);
+INSERT INTO status_imovel (status_imovel, cod_imovelFK_statusImovel) VALUES ( 'Vende-se', 4);
 INSERT INTO status_imovel (status_imovel, cod_imovelFK_statusImovel) VALUES ( 'Vende-se', 5);
 INSERT INTO status_imovel (status_imovel, cod_imovelFK_statusImovel) VALUES ( 'Vende-se', 6);
 INSERT INTO status_imovel (status_imovel, cod_imovelFK_statusImovel) VALUES ( 'Aluga-se', 7);
@@ -174,18 +177,30 @@ INSERT INTO rel_imobiliaria (relacao) VALUES ('Comprador');
 INSERT INTO rel_imobiliaria (relacao) VALUES ('Vendedor');
 
 
-INSERT INTO Clientes (nome, telefone, cpf, email, cod_imovelFK_clientes, cod_categoriafk_clientes,cod_rel_imobiliariaFK_clientes) VALUES ('Giovanna Zanetti', '(019) 9974068631',  '45515577819', 'giihzanetti@outlook.com', 1, 1 ,1);
-INSERT INTO Clientes (nome, telefone, cpf, email, cod_imovelFK_clientes, cod_categoriafk_clientes,cod_rel_imobiliariaFK_clientes) VALUES ('Beatriz Reis', '(019) 997195444',  '12345678910', 'beatriz_reis@outlook.com', 2, 2 ,2);
-INSERT INTO Clientes (nome, telefone, cpf, email, cod_imovelFK_clientes, cod_categoriafk_clientes,cod_rel_imobiliariaFK_clientes) VALUES ('Elizabeth Weber', '(019) 998417922',  '03876538312', 'lizweberjoui@outlook.com', 3, 3 ,3);
-INSERT INTO Clientes (nome, telefone, cpf, email, cod_imovelFK_clientes, cod_categoriafk_clientes,cod_rel_imobiliariaFK_clientes) VALUES ('Thiago Fritz', '(019) 997403269',  '98344419265', 'thiagao@outlook.com', 4, 4 ,4);
+INSERT INTO Clientes (nome, telefone, cpf, email, cod_imovelFK_clientes,cod_rel_imobiliariaFK_clientes) VALUES ('Giovanna Zanetti', '(019) 9974068631',  '45515577819', 'giihzanetti@outlook.com', 1, 4);
+INSERT INTO Clientes (nome, telefone, cpf, email, cod_imovelFK_clientes,cod_rel_imobiliariaFK_clientes) VALUES ('Beatriz Reis', '(019) 997195444',  '12345678910', 'beatriz_reis@outlook.com', 2, 2);
+INSERT INTO Clientes (nome, telefone, cpf, email, cod_imovelFK_clientes,cod_rel_imobiliariaFK_clientes) VALUES ('Elizabeth Weber', '(019) 998417922',  '03876538312', 'lizweberjoui@outlook.com', 3, 4);
+INSERT INTO Clientes (nome, telefone, cpf, email, cod_imovelFK_clientes,cod_rel_imobiliariaFK_clientes) VALUES ('Thiago Fritz', '(019) 997403269',  '98344419265', 'thiagao@outlook.com', 4, 4);
+INSERT INTO Clientes (nome, telefone, cpf, email, cod_imovelFK_clientes,cod_rel_imobiliariaFK_clientes) VALUES ('Vitoria Souza', '(019) 997437284',  '86543937461', 'vitoriasouza@outlook.com', 5, 4);
+INSERT INTO Clientes (nome, telefone, cpf, email, cod_imovelFK_clientes,cod_rel_imobiliariaFK_clientes) VALUES ('Gabriel Sandrin', '(019) 997352906',  '72548538629', 'sandrinho@outlook.com', 6, 4);
+INSERT INTO Clientes (nome, telefone, cpf, email, cod_imovelFK_clientes,cod_rel_imobiliariaFK_clientes) VALUES ('Giulia Reis', '(019) 936463428',  '65382054629', 'giuliaReis@outlook.com', 7, 2);
+INSERT INTO Clientes (nome, telefone, cpf, email, cod_imovelFK_clientes,cod_rel_imobiliariaFK_clientes) VALUES ('Carmen Zanetti', '(019) 993537348',  '01634296418', 'Zaza_Carmen@outlook.com', 8, 2);
+INSERT INTO Clientes (nome, telefone, cpf, email, cod_imovelFK_clientes,cod_rel_imobiliariaFK_clientes) VALUES ('Keanu Reeves', '(019) 9974065587',  '48732599855', 'ke_reeves@gmail.com', 6, 3);
+INSERT INTO Clientes (nome, telefone, cpf, email, cod_imovelFK_clientes,cod_rel_imobiliariaFK_clientes) VALUES ('Jason Momoa', '(019) 997195000',  '12345675010', 'ja_momoa@gmail.com', 1, 3);
+INSERT INTO Clientes (nome, telefone, cpf, email, cod_imovelFK_clientes,cod_rel_imobiliariaFK_clientes) VALUES ('Cher Carvalho', '(019) 9974065569',  '48732595544', 'cher_cantora@gmail.com', 2, 1);
+INSERT INTO Clientes (nome, telefone, cpf, email, cod_imovelFK_clientes,cod_rel_imobiliariaFK_clientes) VALUES ('Shakira Silva', '(019) 997195236',  '12345677894', 'shakira.silva@gmail.com', 8, 1);
 
 INSERT INTO Corretor(nome_corretor, porcentagem_comissao, cod_clienteFK_corretor) VALUES ('Cezar Cohen', 5.00, 1);
 INSERT INTO Corretor(nome_corretor, porcentagem_comissao, cod_clienteFK_corretor) VALUES ('Arthur Cervero', 7.00, 2);
 INSERT INTO Corretor(nome_corretor, porcentagem_comissao, cod_clienteFK_corretor) VALUES ('Cristopher Cohen', 6.00, 3);
 INSERT INTO Corretor(nome_corretor, porcentagem_comissao, cod_clienteFK_corretor) VALUES ('Joui Jouki', 4.00, 4);
+INSERT INTO Corretor(nome_corretor, porcentagem_comissao, cod_clienteFK_corretor) VALUES ('Cezar Cohen', 8.00, 5);
+INSERT INTO Corretor(nome_corretor, porcentagem_comissao, cod_clienteFK_corretor) VALUES ('Arthur Cervero', 4.50, 6);
+INSERT INTO Corretor(nome_corretor, porcentagem_comissao, cod_clienteFK_corretor) VALUES ('Cristopher Cohen', 9.00, 7);
+INSERT INTO Corretor(nome_corretor, porcentagem_comissao, cod_clienteFK_corretor) VALUES ('Joui Jouki', 10.00, 8);
 
+INSERT INTO Vendas(valor_venda, valor_comissao, data_venda, cod_clienteFK_vendedor, cod_clienteFK_comprador, cod_corretor_vendas) VALUES (230000.00, 18400.00, '2022-10-22', 1, 10, 1);
+INSERT INTO Vendas(valor_venda, valor_comissao, data_venda, cod_clienteFK_vendedor, cod_clienteFK_comprador, cod_corretor_vendas) VALUES (500000.00, 25000.00, '2022-10-21', 6, 9, 2);
 
-INSERT INTO Vendas(valor_venda,valor_comissao,data_venda,valor_aluguel,comissao_aluguel,data_alugado,cod_clienteFK_vendas,cod_corretor_vendas) VALUES (280000.00, 1000.00, 2022-01-01, NULL, NULL, NULL, 1, 1);
-INSERT INTO Vendas(valor_venda,valor_comissao,data_venda,valor_aluguel,comissao_aluguel,data_alugado,cod_clienteFK_vendas,cod_corretor_vendas) VALUES (230000.00, 1000.00, 2022-09-07, NULL, NULL, NULL, 2, 2);
-INSERT INTO Vendas(valor_venda,valor_comissao,data_venda,valor_aluguel,comissao_aluguel,data_alugado,cod_clienteFK_vendas,cod_corretor_vendas) VALUES (NULL, NULL,NULL, 2500.00, 10.00, 2022-10-18, 3, 3);
-INSERT INTO Vendas(valor_venda,valor_comissao,data_venda,valor_aluguel,comissao_aluguel,data_alugado,cod_clienteFK_vendas,cod_corretor_vendas) VALUES (NULL, NULL,NULL, 6000.00, 25.00, 2022-10-17, 4, 4);
+INSERT INTO Aluguel(valor_aluguel, valor_comissao, comissao_aluguel, data_alugado, cod_clienteFK_locatario, cod_clienteFK_inquilino, cod_corretor_aluguel) VALUES (2000.00, 160.00, 8.0 , '2022-09-08', 7, 11, 3);
+INSERT INTO Aluguel(valor_aluguel, valor_comissao, comissao_aluguel, data_alugado, cod_clienteFK_locatario, cod_clienteFK_inquilino, cod_corretor_aluguel) VALUES (1500.00, 75.00, 5.0 , '2022-09-07', 8, 12, 4);
