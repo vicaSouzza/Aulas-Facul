@@ -202,5 +202,5 @@ INSERT INTO Corretor(nome_corretor, porcentagem_comissao, cod_clienteFK_corretor
 INSERT INTO Vendas(valor_venda, valor_comissao, data_venda, cod_clienteFK_vendedor, cod_clienteFK_comprador, cod_corretor_vendas) VALUES (230000.00, 18400.00, '2022-10-22', 1, 10, 1);
 INSERT INTO Vendas(valor_venda, valor_comissao, data_venda, cod_clienteFK_vendedor, cod_clienteFK_comprador, cod_corretor_vendas) VALUES (500000.00, 25000.00, '2022-10-21', 6, 9, 2);
 
-INSERT INTO Aluguel(valor_aluguel, valor_comissao, comissao_aluguel, data_alugado, cod_clienteFK_locatario, cod_clienteFK_inquilino, cod_corretor_aluguel) VALUES (2000.00, 160.00, 8.0 , '2022-09-08', 7, 11, 3);
+INSERT INTO Aluguel(valor_aluguel, valor_comissao, comissao_aluguel, data_alugado, cod_clienteFK_locatario, cod_clienteFK_inquilino, cod_corretor_aluguel) VALUES (2000.00, 160.00, 8.0 , '2022-09-08', 2, 11, 3);
 INSERT INTO Aluguel(valor_aluguel, valor_comissao, comissao_aluguel, data_alugado, cod_clienteFK_locatario, cod_clienteFK_inquilino, cod_corretor_aluguel) VALUES (1500.00, 75.00, 5.0 , '2022-09-07', 8, 12, 4);
